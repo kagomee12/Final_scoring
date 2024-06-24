@@ -16,7 +16,7 @@ app.use("/uploads", express.static(path.join(__dirname, "src/uploads")));
 
 app.get('/', async function (req, res) {
 
-  const datatype = await sequelize.query(`SELECT "type_tbs".name_type, "heroes_tbs".* FROM "type_tbs" RIGHT JOIN "heroes_tbs" ON "type_tbs".id = "heroes_tbs".type_id`, { type: QueryTypes.SELECT })
+  const datatype = await sequelize.query(`SELECT "type_tbs".name_type, "heroes_tbs".* FROM "type_tbs" RIGHT JOIN "heroes_tbs" ON "type_tbs".id = "heroes_tbs".type_id ORDER by "heroes_tbs".id DESC`, { type: QueryTypes.SELECT })
   res.render('index',{data: datatype})
 })
 
