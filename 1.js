@@ -12,11 +12,10 @@ function primaNumber(a) {
 function arrayPrima(totalprima) {
     const prima = [];
     let num = 1; 
-    for (let i = 0; i <= totalprima; num++) { 
+    for (let i = 1; i <= totalprima; num++) { 
         if (primaNumber(num)) {
             prima.push(num); 
             i++;
-            console.log(prima)
         }
     }
     return prima;
