@@ -3,7 +3,7 @@ function primaNumber(a) {
     if (a <= 3) return true;
     if ( a == 5) return true;
     if (a % 2 === 0 || a % 3 === 0 || a % 5 ===0 ) return false;
-    for (let i = 6; i * i <= a; i ++ ) {
+    for (let i = 6; i * i < a; i ++ ) {
         if (a % i === 0 ) return false;
     }
     return true;
@@ -23,8 +23,8 @@ function arrayPrima(totalprima) {
 
 function drawSikuSiku (a) {
     if (a < 0 || a > 10){
-        console.log("nilai harus diantara lebih dari 0 dan kurang dari 10");
-    }else{
+        return console.log("nilai harus diantara lebih dari 0 dan kurang dari 10");
+    }
     const totalPrima = a*(a+1)/2;
     const primes = arrayPrima(totalPrima);
     let index = 0;
@@ -36,7 +36,7 @@ function drawSikuSiku (a) {
         }
        array += "\n"
     }
-    console.log(array);}
+    console.log(array);
 }
 
-drawSikuSiku(4)
+drawSikuSiku(5)

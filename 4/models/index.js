@@ -1,5 +1,7 @@
 'use strict';
-
+//Migrations adalah skrip yang mengatur perubahan pada struktur database dari waktu ke waktu. 
+//Models mendefinisikan struktur data dan hubungan antara tabel dalam kode JavaScript.
+//indeks js untuk menginilisasi semua models 
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');

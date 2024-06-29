@@ -1,16 +1,23 @@
 const express = require('express')
-const app = express()
+
 const { Sequelize, QueryTypes } = require("sequelize");
 const config = require("./config/config.json");
 const path = require("path");
-const { Console } = require('console');
+
+
 const upload = require('./src/middleware/uploadfile');
-const { type } = require('os');
+
+
 const sequelize = new Sequelize(config.development);
+
+const app = express()
+
 
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "src/views"));
+
 app.use("/assests", express.static(path.join(__dirname, "src/assests")));
+
 app.use(express.urlencoded({ extended: false }));
 app.use("/uploads", express.static(path.join(__dirname, "src/uploads")));
 
@@ -34,6 +41,10 @@ app.get("/addtype", function (req,res) {
 app.post("/addtype_id",async function (req,res) {
 
     const {name_type} = req.body;
+    const obj_type = await sequelize.query(`SELECT * FROM type_tbs WHERE name_type = '${name_type}'`,{ type: QueryTypes.SELECT }) 
+    if(obj_type.length == 1){
+      return res.redirect("/addtype")
+    }
 
     const now = new Date();
 

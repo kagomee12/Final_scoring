@@ -9,7 +9,6 @@ function bubbleSort(input,n){
         input[i + 1] = newvar;
       }
     }
-    console.log(input);
     return bubbleSort(input,n+1);
     
 }
@@ -21,11 +20,11 @@ function sortArray(arr) {
     let genap = [];
     let ganjil = [];
 
-    sortedArray.forEach(num => {
-        if (num % 2 === 0) {
-            genap.push(num);
+    sortedArray.forEach(number => {
+        if (number % 2 === 0) {
+            genap.push(number);
         } else {
-            ganjil.push(num);
+            ganjil.push(number);
         }
     });
 
