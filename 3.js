@@ -33,5 +33,5 @@ function sortArray(arr) {
 }
 
 
-let arr = [2, 24, 32, 22, 31, 100, 56, 21, 99, 7, 5, 37, 97, 25, 13, 11];
+let arr = [2, 24, 32, 22, 31, 100, 56, 21, 99];
 console.log(sortArray(arr));

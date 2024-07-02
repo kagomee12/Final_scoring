@@ -180,7 +180,4 @@ app.post("/delete/:id", async function  (req, res) {
 })
 
 
-
-
-
 app.listen(5000)

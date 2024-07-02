@@ -39,4 +39,4 @@ function drawSikuSiku (a) {
     console.log(array);
 }
 
-drawSikuSiku(5)
+drawSikuSiku(11)
